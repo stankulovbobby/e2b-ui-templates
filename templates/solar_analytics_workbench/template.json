@@ -1,0 +1,144 @@
+{
+  "schema_version": 1,
+  "id": "solar_analytics_workbench",
+  "version": "0.1.0",
+  "display_name": "Solar Analytics Workbench",
+  "description": "A frontend-only React/Vite analytics workspace for solar contractor operators to analyze project cycle time, stage aging, permitting bottlenecks, AHJ performance, PTO risk, and regional operations variance using mock data only.",
+  "category": "analytics_workbench",
+  "vertical": "solar_contractor",
+  "stack": "react_vite_typescript",
+  "template_root": ".",
+  "claude_md": "CLAUDE.md",
+  "skills": [
+    "react-vite-frontend-only",
+    "solar-contractor-domain",
+    "solar-analytics-workbench",
+    "data-visualization",
+    "histogram-analysis",
+    "mock-data-modeling",
+    "responsive-b2b-ui",
+    "frontend-safety-review",
+    "build-repair"
+  ],
+  "intent_tags": [
+    "solar analytics",
+    "analytics workbench",
+    "analysis",
+    "histogram",
+    "distribution",
+    "cycle time analysis",
+    "stage aging",
+    "permit aging",
+    "PTO aging",
+    "operations analysis",
+    "bottleneck analysis",
+    "AHJ benchmark",
+    "regional comparison",
+    "project performance"
+  ],
+  "domain_tags": [
+    "solar",
+    "solar contractor",
+    "home services",
+    "project operations",
+    "permitting",
+    "inspection",
+    "PTO",
+    "AHJ",
+    "utility interconnection",
+    "crew capacity"
+  ],
+  "toolchain": {
+    "package_manager": "npm",
+    "node": ">=18.20.0 <23",
+    "npm": ">=9",
+    "vite": "5.4.21",
+    "typescript": "5.4.5",
+    "react": "18.2.0"
+  },
+  "commands": {
+    "install": "npm ci --no-audit --no-fund",
+    "build": "npm run build",
+    "dev": "npm run dev -- --host 0.0.0.0 --port 5173",
+    "preview": "npm run preview -- --host 0.0.0.0 --port 5173"
+  },
+  "preview": {
+    "port": 5173,
+    "health_path": "/",
+    "vite_allowed_hosts_required": true
+  },
+  "source_files": [
+    "package.json",
+    "package-lock.json",
+    "tsconfig.json",
+    "vite.config.ts",
+    "index.html",
+    "src/**/*.ts",
+    "src/**/*.tsx",
+    "src/**/*.css"
+  ],
+  "agent_files": [
+    "CLAUDE.md",
+    ".claude/skills/*/SKILL.md"
+  ],
+  "artifact_exclude": [
+    "template.json",
+    "CLAUDE.md",
+    ".claude/**",
+    "node_modules/**",
+    "dist/**",
+    ".git/**",
+    ".env*"
+  ],
+  "allowed_dependencies": {
+    "dependencies": [
+      "@vitejs/plugin-react",
+      "react",
+      "react-dom",
+      "vite",
+      "typescript",
+      "@types/react",
+      "@types/react-dom"
+    ],
+    "policy": "Do not add runtime dependencies unless the orchestrator explicitly approves them. Prefer native SVG/CSS charts for histograms, trends, and benchmark visuals."
+  },
+  "disallowed_patterns": [
+    "backend code",
+    "API routes",
+    "server folders",
+    "database code",
+    "network requests such as fetch/axios/XMLHttpRequest/WebSocket/EventSource",
+    "process.env or import.meta.env for secrets",
+    "dangerouslySetInnerHTML",
+    "eval/new Function",
+    "external network calls",
+    "Dockerfile or docker-compose"
+  ],
+  "default_pages": [
+    {
+      "route": "/",
+      "title": "Cycle Time Analytics",
+      "purpose": "Help solar operations leaders understand where projects are slowing down across permitting, inspection, install, and PTO."
+    }
+  ],
+  "mock_data_entities": [
+    "AnalyticsMetric",
+    "DistributionBucket",
+    "StageAgingDistribution",
+    "CycleTrendPoint",
+    "AhjBenchmark",
+    "ProjectSample",
+    "BottleneckInsight",
+    "RegionalCohort"
+  ],
+  "acceptance_criteria": [
+    "Builds successfully with npm run build.",
+    "Uses mock data only from src/mockData.ts.",
+    "Includes at least two meaningful distribution or histogram views.",
+    "Explains what the distributions mean using plain-English insight cards.",
+    "Includes solar-specific operational terms such as AHJ, permit aging, site survey, inspection, utility interconnection, and PTO.",
+    "Includes filters or cohort selectors for region, stage, crew, utility, and date window.",
+    "Includes a drill-down table with sample projects and recommended next action.",
+    "Remains frontend-only: no backend, no external API calls, no secrets."
+  ]
+}
