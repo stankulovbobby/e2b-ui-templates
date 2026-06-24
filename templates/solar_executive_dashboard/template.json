@@ -1,0 +1,139 @@
+{
+  "schema_version": 1,
+  "id": "solar_executive_dashboard",
+  "version": "0.1.0",
+  "display_name": "Solar Executive Dashboard",
+  "description": "A polished frontend-only React/Vite dashboard for solar contractor executives, showing pipeline, revenue, operations health, bottlenecks, at-risk projects, and team performance using mock data only.",
+  "category": "executive_dashboard",
+  "vertical": "solar_contractor",
+  "stack": "react_vite_typescript",
+  "template_root": ".",
+  "claude_md": "CLAUDE.md",
+  "skills": [
+    "react-vite-frontend-only",
+    "solar-contractor-domain",
+    "solar-executive-dashboard",
+    "data-visualization",
+    "mock-data-modeling",
+    "responsive-b2b-ui",
+    "frontend-safety-review",
+    "build-repair"
+  ],
+  "intent_tags": [
+    "solar dashboard",
+    "executive dashboard",
+    "business overview",
+    "kpi dashboard",
+    "sales performance",
+    "operations health",
+    "solar contractor reporting",
+    "owner dashboard",
+    "subcontractor hub style",
+    "seamless energy style"
+  ],
+  "domain_tags": [
+    "solar",
+    "solar contractor",
+    "home services",
+    "roofing",
+    "hvac",
+    "sales operations",
+    "project operations",
+    "installation operations",
+    "permitting",
+    "PTO"
+  ],
+  "toolchain": {
+    "package_manager": "npm",
+    "node": ">=18.20.0 <23",
+    "npm": ">=9",
+    "vite": "5.4.21",
+    "typescript": "5.4.5",
+    "react": "18.2.0"
+  },
+  "commands": {
+    "install": "npm ci --no-audit --no-fund",
+    "build": "npm run build",
+    "dev": "npm run dev -- --host 0.0.0.0 --port 5173",
+    "preview": "npm run preview -- --host 0.0.0.0 --port 5173"
+  },
+  "preview": {
+    "port": 5173,
+    "health_path": "/",
+    "vite_allowed_hosts_required": true
+  },
+  "source_files": [
+    "package.json",
+    "package-lock.json",
+    "tsconfig.json",
+    "vite.config.ts",
+    "index.html",
+    "src/**/*.ts",
+    "src/**/*.tsx",
+    "src/**/*.css"
+  ],
+  "agent_files": [
+    "CLAUDE.md",
+    ".claude/skills/*/SKILL.md"
+  ],
+  "artifact_exclude": [
+    "template.json",
+    "CLAUDE.md",
+    ".claude/**",
+    "node_modules/**",
+    "dist/**",
+    ".git/**",
+    ".env*"
+  ],
+  "allowed_dependencies": {
+    "dependencies": [
+      "@vitejs/plugin-react",
+      "react",
+      "react-dom",
+      "vite",
+      "typescript",
+      "@types/react",
+      "@types/react-dom"
+    ],
+    "policy": "Do not add runtime dependencies unless the orchestrator explicitly approves them. Prefer native SVG/CSS charts for this template."
+  },
+  "disallowed_patterns": [
+    "backend code",
+    "API routes",
+    "server folders",
+    "database code",
+    "fetch/axios/XMLHttpRequest/WebSocket/EventSource",
+    "process.env or import.meta.env for secrets",
+    "dangerouslySetInnerHTML",
+    "eval/new Function",
+    "external network calls",
+    "Dockerfile or docker-compose"
+  ],
+  "default_pages": [
+    {
+      "route": "/",
+      "title": "Executive Overview",
+      "purpose": "Help a solar contractor owner or executive understand sales pipeline, operations health, and risks in under 10 seconds."
+    }
+  ],
+  "mock_data_entities": [
+    "ExecutiveMetric",
+    "PipelineStage",
+    "RevenuePoint",
+    "OperationsMetric",
+    "ProjectRisk",
+    "TeamPerformance",
+    "RegionalSnapshot",
+    "Bottleneck"
+  ],
+  "acceptance_criteria": [
+    "Builds successfully with npm run build.",
+    "Uses mock data only from src/mockData.ts.",
+    "Contains a clear executive KPI row above the fold.",
+    "Includes solar-specific sales and operations terminology such as AHJ, PTO, permitting, site survey, install, inspection, and interconnection.",
+    "Shows both revenue/pipeline and operations health, not only generic metrics.",
+    "Includes at-risk projects or bottlenecks with plain-English recommended action.",
+    "Looks credible to a solar contractor executive seeing the demo for the first time.",
+    "Remains frontend-only: no backend, no external API calls, no secrets."
+  ]
+}
