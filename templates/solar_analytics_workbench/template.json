@@ -56,6 +56,7 @@
     "typescript": "5.4.5",
     "react": "18.2.0"
   },
+  "e2b_template_id": "subhub-solar-workbench",
   "commands": {
     "install": "npm install --no-audit --no-fund",
     "build": "npm run build",
