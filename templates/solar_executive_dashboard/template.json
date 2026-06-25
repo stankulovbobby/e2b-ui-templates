@@ -52,7 +52,7 @@
     "react": "18.2.0"
   },
   "commands": {
-    "install": "npm ci --no-audit --no-fund",
+    "install": "npm install --no-audit --no-fund",
     "build": "npm run build",
     "dev": "npm run dev -- --host 0.0.0.0 --port 5173",
     "preview": "npm run preview -- --host 0.0.0.0 --port 5173"
